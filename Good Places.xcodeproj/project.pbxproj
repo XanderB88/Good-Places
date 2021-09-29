@@ -49,6 +49,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		11657EFF2704BA46004DC8F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1166DA9A270316C3005A623C /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		11657F002704BA5C004DC8F3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1166DAAA27031752005A623C /* MainViewController.swift */,
+				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		1166DA88270316C3005A623C = {
 			isa = PBXGroup;
 			children = (
@@ -69,10 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				1166DAA8270316D7005A623C /* Core */,
-				1166DA9A270316C3005A623C /* Main.storyboard */,
-				1166DAAA27031752005A623C /* MainViewController.swift */,
+				11657EFF2704BA46004DC8F3 /* View */,
+				11657F002704BA5C004DC8F3 /* Controller */,
 				1163D94D2703FCA9002A0AD5 /* Model */,
-				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
 				1166DAA9270316F5005A623C /* Supporting files */,
 				1166DAA2270316C4005A623C /* Info.plist */,
 			);
