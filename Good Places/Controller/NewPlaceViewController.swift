@@ -9,6 +9,8 @@ import UIKit
 
 class NewPlaceViewController: UITableViewController {
     
+    @IBOutlet weak var placeImage: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //        Delete lines from down of table
@@ -55,15 +57,25 @@ extension NewPlaceViewController: UITextFieldDelegate {
 }
 
 // MARK: - Work with image
-extension NewPlaceViewController {
+extension NewPlaceViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func chooseImagePicker(source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
             
             imagePicker.allowsEditing = true
             imagePicker.sourceType = source
             
             present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    //    Get an image from the photoLibrary or the camera to UIImageView element on the screen
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        placeImage.clipsToBounds = true
+        dismiss(animated: true, completion: nil)
     }
 }
