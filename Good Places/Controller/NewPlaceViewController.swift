@@ -21,6 +21,9 @@ class NewPlaceViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
+            let cameraIcon = #imageLiteral(resourceName: "camera")
+            let photoIcon = #imageLiteral(resourceName: "photo")
+            
             //            Сreate an actionSheet to add an image for a new place.
             let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
@@ -28,9 +31,19 @@ class NewPlaceViewController: UITableViewController {
                 self.chooseImagePicker(source: .camera)
             }
             
+            //Add an icon and alignmet to camera action sheet item
+            camera.setValue(cameraIcon, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
+            
             let photo = UIAlertAction(title: "Photo", style: .default) { _ in
                 self.chooseImagePicker(source: .photoLibrary)
             }
+            
+            //Add an icon and alignmet to photo action sheet item
+            photo.setValue(photoIcon, forKey: "image")
+            photo.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
             
             let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             
