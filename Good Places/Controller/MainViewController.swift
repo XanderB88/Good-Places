@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    var goodPlaces = Place.getPlaces()
+//    var goodPlaces = Place.getPlaces()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,32 +18,32 @@ class MainViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return goodPlaces.count
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return goodPlaces.count
+//    }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-        
-        let place = goodPlaces[indexPath.row]
-        
-        cell.nameLabel?.text = place.name
-        cell.locationLabel?.text = place.location
-        cell.typeLabel?.text = place.type
-        
-        if place.image == nil {
-            cell.placeImage?.image = UIImage(named: place.placeImage!)
-        } else {
-            cell.placeImage?.image = place.image
-        }
-        
-        cell.placeImage?.layer.cornerRadius = cell.placeImage.frame.size.height / 2
-        cell.placeImage?.clipsToBounds = true
-       
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+//
+//        let place = goodPlaces[indexPath.row]
+//
+//        cell.nameLabel?.text = place.name
+//        cell.locationLabel?.text = place.location
+//        cell.typeLabel?.text = place.type
+//
+//        if place.image == nil {
+//            cell.placeImage?.image = UIImage(named: place.placeImage!)
+//        } else {
+//            cell.placeImage?.image = place.image
+//        }
+//
+//        cell.placeImage?.layer.cornerRadius = cell.placeImage.frame.size.height / 2
+//        cell.placeImage?.clipsToBounds = true
+//
+//        return cell
+//    }
   
     /*
     // MARK: - Navigation
@@ -60,7 +60,7 @@ class MainViewController: UITableViewController {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         
         newPlaceVC.saveNewPlace()
-        goodPlaces.append(newPlaceVC.newPlace!)
+//        goodPlaces.append(newPlaceVC.newPlace!)
         tableView.reloadData()
     }
 }

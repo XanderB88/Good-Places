@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		1166DA9E270316C4005A623C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1166DA9D270316C4005A623C /* Assets.xcassets */; };
 		1166DAA1270316C4005A623C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1166DA9F270316C4005A623C /* LaunchScreen.storyboard */; };
 		1166DAAB27031752005A623C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1166DAAA27031752005A623C /* MainViewController.swift */; };
+		116B7C18270C3F8A00A78D74 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116B7C17270C3F8A00A78D74 /* StorageManager.swift */; };
 		E61808DE48B730A017BD5232 /* Pods_Good_Places.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF6E7EE90385E089F6831BE /* Pods_Good_Places.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		1166DAA0270316C4005A623C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1166DAA2270316C4005A623C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1166DAAA27031752005A623C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		116B7C17270C3F8A00A78D74 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3FF6E7EE90385E089F6831BE /* Pods_Good_Places.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Good_Places.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68BA22D77006908EC4719461 /* Pods-Good Places.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Places.release.xcconfig"; path = "Target Support Files/Pods-Good Places/Pods-Good Places.release.xcconfig"; sourceTree = "<group>"; };
 		AC03042A0BA08ACA7754C6DA /* Pods-Good Places.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Good Places.debug.xcconfig"; path = "Target Support Files/Pods-Good Places/Pods-Good Places.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				1163D94D2703FCA9002A0AD5 /* Model */,
 				1166DAA9270316F5005A623C /* Supporting files */,
 				1166DAA2270316C4005A623C /* Info.plist */,
+				116B7C19270C44BC00A78D74 /* Manager */,
 			);
 			path = "Good Places";
 			sourceTree = "<group>";
@@ -123,13 +126,20 @@
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
+		116B7C19270C44BC00A78D74 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				116B7C17270C3F8A00A78D74 /* StorageManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		457B919D338F13DE60C7C5D7 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				AC03042A0BA08ACA7754C6DA /* Pods-Good Places.debug.xcconfig */,
 				68BA22D77006908EC4719461 /* Pods-Good Places.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +268,7 @@
 				1166DA95270316C3005A623C /* AppDelegate.swift in Sources */,
 				11657F022704C781004DC8F3 /* NewPlaceViewController.swift in Sources */,
 				1166DAAB27031752005A623C /* MainViewController.swift in Sources */,
+				116B7C18270C3F8A00A78D74 /* StorageManager.swift in Sources */,
 				1163D94A2703F611002A0AD5 /* CustomTableViewCell.swift in Sources */,
 				1166DA97270316C3005A623C /* SceneDelegate.swift in Sources */,
 				1163D94C2703FCA2002A0AD5 /* PlacesModel.swift in Sources */,
