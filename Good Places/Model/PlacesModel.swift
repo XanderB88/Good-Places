@@ -9,19 +9,26 @@ import RealmSwift
 
 class Place: Object {
     
-    @objc dynamic var name = ""
-    @objc dynamic var location: String?
-    @objc dynamic var type: String?
-    @objc dynamic var image: UIImage?
+    @Persisted var name = ""
+    @Persisted var location: String?
+    @Persisted var type: String?
+    @Persisted var imageData: Data?
     
-   let goodPlacesName = [
+    let goodPlacesName = [
         "Burger Heroes", "Kitchen", "Bonsai", "Дастархан", "Индокитай", "X.O", "Балкан Гриль", "Sherlock Holmes", "Speak Easy", "Morris Pub", "Вкусные истории", "Классик", "Love&Life", "Шок", "Бочка"
     ]
     
     func savePlaces(){
         for place in goodPlacesName {
-           let newPlace = Place()
-           newPlace.name = place
+            let image = UIImage(named: place)
+            guard let imageData = image?.pngData() else { return }
+            
+            let newPlace = Place()
+            
+            newPlace.name = place
+            newPlace.location = "Samara"
+            newPlace.type = "Restaurant"
+            newPlace.imageData = imageData
         }
     }
 }
