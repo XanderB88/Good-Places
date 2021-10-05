@@ -68,6 +68,7 @@
                                     <outlet property="nameLabel" destination="BRY-1v-86z" id="JhI-vf-Ce0"/>
                                     <outlet property="placeImage" destination="rVX-sl-CQ8" id="XnB-qA-Nud"/>
                                     <outlet property="typeLabel" destination="zSw-oY-KBc" id="QsT-1M-oi1"/>
+                                    <segue destination="7de-wc-NPI" kind="show" identifier="showDetail" id="ZSb-LU-dhf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -256,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KcZ-9V-DMD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="JnS-es-Yce" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2728.985507246377" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1851" y="98"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qdS-DH-Tex">
@@ -298,9 +299,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRC-3C-Di6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1818.840579710145" y="97.767857142857139"/>
+            <point key="canvasLocation" x="1851" y="-615"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ZSb-LU-dhf"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">
