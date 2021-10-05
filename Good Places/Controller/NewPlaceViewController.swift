@@ -21,10 +21,6 @@ class NewPlaceViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.newPlace.savePlaces()
-        }
-        
         //        Delete lines from down of table
         tableView.tableFooterView = UIView()
         
