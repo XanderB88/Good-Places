@@ -186,8 +186,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="6Wb-FV-yqc">
+                                <rect key="frame" x="0.0" y="92" width="414" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Date"/>
+                                    <segment title="Name"/>
+                                </segments>
+                                <connections>
+                                    <action selector="sortSelection:" destination="ewI-Cr-OEA" eventType="valueChanged" id="e4e-kN-9bJ"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vY1-Bm-OPi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
@@ -257,6 +268,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" title="Good Places" id="YR2-5X-QlB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="T5n-fu-aGG">
+                            <connections>
+                                <action selector="sortingButton:" destination="ewI-Cr-OEA" id="LjC-5v-8SC"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="vr7-k2-9cR">
                             <connections>
                                 <segue destination="9ot-U2-k5K" kind="presentation" modalPresentationStyle="fullScreen" modalTransitionStyle="flipHorizontal" id="ocJ-kJ-CGW"/>
@@ -264,12 +280,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="reversedSortingButton" destination="T5n-fu-aGG" id="VkF-Ls-mgI"/>
+                        <outlet property="segmentedControl" destination="6Wb-FV-yqc" id="ne7-e6-Ihw"/>
                         <outlet property="tableView" destination="vY1-Bm-OPi" id="whL-hl-JnJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xXZ-fl-9UK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="98"/>
+            <point key="canvasLocation" x="957.97101449275374" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qdS-DH-Tex">
@@ -318,6 +336,7 @@
         <segue reference="jVj-pS-cUh"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

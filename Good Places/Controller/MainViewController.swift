@@ -11,8 +11,11 @@ import RealmSwift
 class MainViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-  
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
+    
     var goodPlaces: Results<Place>!
+    var ascendingSorting = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,33 +38,59 @@ class MainViewController: UIViewController {
         newPlaceVC.savePlace()
         tableView.reloadData()
     }
-}
-    
-    // MARK: - Table view data source
-    extension MainViewController: UITableViewDataSource {
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return goodPlaces.isEmpty ? 0 : goodPlaces.count
-        }
-        
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-            
-            let place = goodPlaces[indexPath.row]
-            
-            cell.nameLabel.text = place.name
-            cell.locationLabel.text = place.location
-            cell.typeLabel.text = place.type
-            cell.placeImage.image = UIImage(data: place.imageData!)
-            
-            cell.placeImage?.layer.cornerRadius = cell.placeImage.frame.size.height / 2
-            cell.placeImage?.clipsToBounds = true
-            
-            return cell
-        }
+   
+    @IBAction func sortSelection(_ sender: UISegmentedControl) {
+        sorting()
     }
+   
+    @IBAction func sortingButton(_ sender: UIBarButtonItem) {
+        ascendingSorting.toggle()
+        
+        if ascendingSorting == true {
+            reversedSortingButton.image = #imageLiteral(resourceName: "AZ")
+        } else {
+            reversedSortingButton.image = #imageLiteral(resourceName: "ZA")
+        }
+        
+        sorting()
+    }
+    
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            goodPlaces = goodPlaces.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            goodPlaces = goodPlaces.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
+        tableView.reloadData()
+    }
+}
 
-    // MARK: - Table view delegate
+// MARK: - Table view data source
+extension MainViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return goodPlaces.isEmpty ? 0 : goodPlaces.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let place = goodPlaces[indexPath.row]
+        
+        cell.nameLabel.text = place.name
+        cell.locationLabel.text = place.location
+        cell.typeLabel.text = place.type
+        cell.placeImage.image = UIImage(data: place.imageData!)
+        
+        cell.placeImage?.layer.cornerRadius = cell.placeImage.frame.size.height / 2
+        cell.placeImage?.clipsToBounds = true
+        
+        return cell
+    }
+}
+
+// MARK: - Table view delegate
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
@@ -75,6 +104,6 @@ extension MainViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }
-  
-    
-   
+
+
+
