@@ -89,23 +89,26 @@ class NewPlaceViewController: UITableViewController {
                              location: placeLocation.text,
                              type: placeType.text,
                              imageData: imageData)
-        try! realm.write({
-            if currentPlace !== nil {
+        
+            if currentPlace != nil {
+                try! realm.write({
                 currentPlace?.name = newPlace.name
                 currentPlace?.location = newPlace.location
                 currentPlace?.type = newPlace.type
                 currentPlace?.imageData = newPlace.imageData
+                })
             } else {
                 StorageManager.saveObject(newPlace)
             }
-        })
+        
     }
     
     private func setupEditingScreen() {
-        setupNavigationBar()
-        imageIsChanged = true
         
-        if currentPlace !== nil {
+        if currentPlace != nil {
+            setupNavigationBar()
+            imageIsChanged = true
+            
             guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
             
             placeImage.image = image
@@ -121,7 +124,6 @@ class NewPlaceViewController: UITableViewController {
         if let topItem = navigationController?.navigationBar.topItem {
             topItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         }
-        
         
         navigationItem.leftBarButtonItem = nil
         title = currentPlace?.name
