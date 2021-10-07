@@ -127,7 +127,13 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let place = goodPlaces[indexPath.row]
+        var place = Place()
+        
+        if isFiltering {
+            place = filteredPlaces[indexPath.row]
+        } else {
+            place = goodPlaces[indexPath.row]
+        }
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _, _, _ in
             StorageManager.deleteObject(place)
