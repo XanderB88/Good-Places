@@ -186,9 +186,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="6Wb-FV-yqc">
-                                <rect key="frame" x="0.0" y="92" width="414" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6Wb-FV-yqc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -197,9 +196,8 @@
                                     <action selector="sortSelection:" destination="ewI-Cr-OEA" eventType="valueChanged" id="e4e-kN-9bJ"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vY1-Bm-OPi">
-                                <rect key="frame" x="0.0" y="127" width="414" height="769"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vY1-Bm-OPi">
+                                <rect key="frame" x="0.0" y="120" width="414" height="776"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="L0k-AJ-Se2" customClass="CustomTableViewCell" customModule="Good_Places" customModuleProvider="target">
@@ -266,6 +264,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nCp-bw-t0L"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vY1-Bm-OPi" firstAttribute="trailing" secondItem="nCp-bw-t0L" secondAttribute="trailing" id="9Zt-tq-oV3"/>
+                            <constraint firstItem="6Wb-FV-yqc" firstAttribute="top" secondItem="nCp-bw-t0L" secondAttribute="top" id="MJM-dP-Sdb"/>
+                            <constraint firstItem="6Wb-FV-yqc" firstAttribute="trailing" secondItem="nCp-bw-t0L" secondAttribute="trailing" id="Rir-vX-BaG"/>
+                            <constraint firstItem="vY1-Bm-OPi" firstAttribute="leading" secondItem="nCp-bw-t0L" secondAttribute="leading" id="Shv-Xq-qXk"/>
+                            <constraint firstAttribute="bottom" secondItem="vY1-Bm-OPi" secondAttribute="bottom" id="dHK-6s-doI"/>
+                            <constraint firstItem="vY1-Bm-OPi" firstAttribute="top" secondItem="6Wb-FV-yqc" secondAttribute="bottom" constant="1" id="gV8-mV-YoR"/>
+                            <constraint firstItem="6Wb-FV-yqc" firstAttribute="leading" secondItem="nCp-bw-t0L" secondAttribute="leading" id="oT4-AX-jYo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Good Places" id="YR2-5X-QlB">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="AZ" id="T5n-fu-aGG">
