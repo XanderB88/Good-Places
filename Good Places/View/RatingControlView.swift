@@ -10,7 +10,12 @@ import UIKit
 @IBDesignable class RatingControlView: UIStackView {
     // MARK: - Properties
     private var ratingButtons = [UIButton]()
-    var rating = 0
+   
+    var rating = 0 {
+        didSet {
+            updateButtonSelectionState()
+        }
+    }
     
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
@@ -44,11 +49,22 @@ import UIKit
         
         ratingButtons.removeAll()
         
+        //        Load the star image
+        let bundle = Bundle(for: type(of: self))
+        let filledStar = UIImage(named: "filledStar", in: bundle, compatibleWith: self.traitCollection)
+        let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        
         //        Fill the view by buttons
         for _ in 0..<starCount {
             //            Create a button
             let button = UIButton()
-            button.backgroundColor = .red
+            
+//            Set the button image
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
             //            Add constraints to the button
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,10 +79,26 @@ import UIKit
             //            Add the new button in rating button array
             ratingButtons.append(button)
         }
+        updateButtonSelectionState()
     }
     
     // MARK: - Button Action
     @objc func ratingButtonTapped(button: UIButton) {
-        print("Rating button was tapped 👍")
+        guard let index = ratingButtons.firstIndex(of: button) else { return }
+        
+//        Calculate a ratinf of the selected button
+        let selectedRating = index + 1
+        
+        if selectedRating == rating {
+            rating = 0
+        } else {
+            rating = selectedRating
+        }
+    }
+    
+    private func updateButtonSelectionState() {
+        for (index, button) in ratingButtons.enumerated() {
+            button.isSelected = index < rating
+        }
     }
 }
