@@ -67,6 +67,7 @@
 			children = (
 				1166DA9A270316C3005A623C /* Main.storyboard */,
 				1165A507270FB78E00DC5A74 /* RatingControlView.swift */,
+				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -75,7 +76,6 @@
 			isa = PBXGroup;
 			children = (
 				1166DAAA27031752005A623C /* MainViewController.swift */,
-				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
 				11657F012704C781004DC8F3 /* NewPlaceViewController.swift */,
 				116E291B271124DE0055777C /* MapViewController.swift */,
 			);
