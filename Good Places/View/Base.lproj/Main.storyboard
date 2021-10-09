@@ -238,35 +238,48 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9W8-FS-mgN">
-                                                    <rect key="frame" x="95" y="9" width="304" height="67"/>
+                                                    <rect key="frame" x="95" y="9" width="189" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwu-da-dq9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="304" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="189" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apM-fE-gga">
-                                                            <rect key="frame" x="0.0" y="26.5" width="304" height="21"/>
+                                                            <rect key="frame" x="0.0" y="26.5" width="189" height="21"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDM-AN-Qx1">
-                                                            <rect key="frame" x="0.0" y="49.5" width="304" height="17.5"/>
+                                                            <rect key="frame" x="0.0" y="49.5" width="189" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dwG-zY-14O" customClass="RatingControlView" customModule="Good_Places" customModuleProvider="target">
+                                                    <rect key="frame" x="292" y="35.5" width="102" height="14"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                            <integer key="value" value="5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="size" keyPath="starSize">
+                                                            <size key="value" width="14" height="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="9W8-FS-mgN" secondAttribute="bottom" constant="9" id="3Nb-kD-Gva"/>
                                                 <constraint firstItem="9W8-FS-mgN" firstAttribute="leading" secondItem="l9j-YE-Cq7" secondAttribute="trailing" constant="15" id="8Q4-yu-A1m"/>
+                                                <constraint firstItem="dwG-zY-14O" firstAttribute="leading" secondItem="9W8-FS-mgN" secondAttribute="trailing" constant="8" id="Cic-e0-41E"/>
+                                                <constraint firstItem="dwG-zY-14O" firstAttribute="trailing" secondItem="65D-J7-9z8" secondAttribute="trailingMargin" id="HZb-q2-fg4"/>
+                                                <constraint firstItem="dwG-zY-14O" firstAttribute="centerY" secondItem="65D-J7-9z8" secondAttribute="centerY" id="KuX-qr-Jhz"/>
                                                 <constraint firstItem="9W8-FS-mgN" firstAttribute="top" secondItem="65D-J7-9z8" secondAttribute="top" constant="9" id="VjF-pZ-Snq"/>
                                                 <constraint firstItem="l9j-YE-Cq7" firstAttribute="leading" secondItem="65D-J7-9z8" secondAttribute="leading" constant="15" id="dNP-tU-tH5"/>
-                                                <constraint firstAttribute="trailing" secondItem="9W8-FS-mgN" secondAttribute="trailing" constant="15" id="mYL-gU-PBu"/>
                                                 <constraint firstItem="l9j-YE-Cq7" firstAttribute="centerY" secondItem="65D-J7-9z8" secondAttribute="centerY" id="piy-zL-tzT"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -274,6 +287,7 @@
                                             <outlet property="locationLabel" destination="apM-fE-gga" id="bxJ-hg-Gp3"/>
                                             <outlet property="nameLabel" destination="dwu-da-dq9" id="01g-58-39M"/>
                                             <outlet property="placeImage" destination="l9j-YE-Cq7" id="ERb-Zu-3nD"/>
+                                            <outlet property="ratingControl" destination="dwG-zY-14O" id="NQP-7t-JGw"/>
                                             <outlet property="typeLabel" destination="BDM-AN-Qx1" id="DuB-jp-zIt"/>
                                             <segue destination="7de-wc-NPI" kind="show" identifier="showDetail" id="jVj-pS-cUh"/>
                                         </connections>
@@ -363,6 +377,9 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="dwG-zY-14O">
+            <size key="intrinsicContentSize" width="252" height="44"/>
+        </designable>
         <designable name="fi4-ry-h2h">
             <size key="intrinsicContentSize" width="252" height="44"/>
         </designable>

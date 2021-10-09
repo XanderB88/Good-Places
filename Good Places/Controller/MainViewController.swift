@@ -119,6 +119,8 @@ extension MainViewController: UITableViewDataSource {
         cell.placeImage?.layer.cornerRadius = cell.placeImage.frame.size.height / 2
         cell.placeImage?.clipsToBounds = true
         
+        cell.ratingControl.rating = Int(place.rating)
+        
         return cell
     }
 }
