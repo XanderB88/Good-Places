@@ -71,8 +71,14 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
-    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showMap" {
+            return
+        }
+        
+        let mapVC = segue.destination as! MapViewController
+        mapVC.place = currentPlace
     }
     
     func savePlace() {
@@ -107,12 +113,11 @@ class NewPlaceViewController: UITableViewController {
     }
     
     private func setupEditingScreen() {
-        
         if currentPlace != nil {
             setupNavigationBar()
             imageIsChanged = true
             
-            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else {return}
+            guard let data = currentPlace?.imageData, let image = UIImage(data: data) else { return }
             
             placeImage.image = image
             placeImage.contentMode = .scaleAspectFill
@@ -132,6 +137,10 @@ class NewPlaceViewController: UITableViewController {
         title = currentPlace?.name
         saveButton.isEnabled = true
     }
+    
+    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 // MARK: - Text field delegate
@@ -150,7 +159,6 @@ extension NewPlaceViewController: UITextFieldDelegate {
             saveButton.isEnabled = false
         }
     }
-    
 }
 
 // MARK: - Work with image
