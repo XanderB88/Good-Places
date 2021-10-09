@@ -100,7 +100,7 @@
 		1166DA93270316C3005A623C /* Good Places */ = {
 			isa = PBXGroup;
 			children = (
-				1166DAA8270316D7005A623C /* Core */,
+				1166DAA8270316D7005A623C /* Application */,
 				11657EFF2704BA46004DC8F3 /* View */,
 				11657F002704BA5C004DC8F3 /* Controller */,
 				1163D94D2703FCA9002A0AD5 /* Model */,
@@ -111,13 +111,13 @@
 			path = "Good Places";
 			sourceTree = "<group>";
 		};
-		1166DAA8270316D7005A623C /* Core */ = {
+		1166DAA8270316D7005A623C /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				1166DA94270316C3005A623C /* AppDelegate.swift */,
 				1166DA96270316C3005A623C /* SceneDelegate.swift */,
 			);
-			path = Core;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		1166DAA9270316F5005A623C /* Supporting files */ = {
