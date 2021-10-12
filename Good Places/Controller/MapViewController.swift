@@ -17,16 +17,29 @@ class MapViewController: UIViewController {
     
     // MARK: - Variables
     var place = Place()
-    var incomeSegueIdentefier = ""
+    var incomeSegueIdentifier = ""
     
    // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var userMark: UIImageView!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapView.delegate = self
-        setupPlacemark()
+        setupMapView()
         checkLocationServices()
+       
+    }
+    
+    private func setupMapView() {
+        if incomeSegueIdentifier == "showPlace" {
+            setupPlacemark()
+            userMark.isHidden = true
+            addressLabel.isHidden = true
+            doneButton.isHidden = true
+        }
     }
     
     private func setupPlacemark() {
@@ -86,6 +99,9 @@ class MapViewController: UIViewController {
     @IBAction func centerUserLocation(_ sender: UIButton) {
         showUserlocation()
     }
+    
+    @IBAction func doneButtonPressed(_ sender: Any) {
+    }
 }
 
 // MARK: - Map view delegate
@@ -121,6 +137,11 @@ extension MapViewController: CLLocationManagerDelegate {
                 break
             case .authorizedWhenInUse:
                 mapView.showsUserLocation = true
+                
+                if incomeSegueIdentifier == "userLocation" {
+                    showUserlocation()
+                    userMark.isHidden = false
+                }
                 break
             case .denied, .restricted:
                 let alert = UIAlertController(title: "Your location is not avalible", message:"For using your location to give permission go to settings" , preferredStyle: .alert)
