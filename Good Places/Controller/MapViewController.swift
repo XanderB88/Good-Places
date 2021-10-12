@@ -10,11 +10,16 @@ import MapKit
 import CoreLocation
 
 class MapViewController: UIViewController {
-    var place = Place()
+    // MARK: - Constants
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
     let regionInMeters = 1_000.0
     
+    // MARK: - Variables
+    var place = Place()
+    var incomeSegueIdentefier = ""
+    
+   // MARK: - Outlets
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -63,11 +68,7 @@ class MapViewController: UIViewController {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    @IBAction func cancelPressed(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func centerUserLocation(_ sender: UIButton) {
+    private func showUserlocation() {
         if let location = locationManager.location?.coordinate {
             let region = MKCoordinateRegion(center: location,
                                             latitudinalMeters: regionInMeters,
@@ -75,6 +76,15 @@ class MapViewController: UIViewController {
             
             mapView.setRegion(region, animated: true)
         }
+    }
+    
+    // MARK: - IBActions
+    @IBAction func cancelPressed(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func centerUserLocation(_ sender: UIButton) {
+        showUserlocation()
     }
 }
 
@@ -120,9 +130,9 @@ extension MapViewController: CLLocationManagerDelegate {
                     let url = URL(string: "App-prefs:root=LOCATION_SERVICES")!
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }))
-               
+                
                 self.present(alert, animated: true, completion: nil)
-               
+                
                 break
             case .authorizedAlways:
                 break

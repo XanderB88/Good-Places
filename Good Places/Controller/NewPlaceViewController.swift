@@ -8,11 +8,12 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
+    // MARK: - Variables
     var currentPlace: Place!
     var imageIsChanged = false
     
+    // MARK: - Outlets
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeName: UITextField!
     @IBOutlet weak var placeLocation: UITextField!
@@ -135,13 +136,13 @@ class NewPlaceViewController: UITableViewController {
         saveButton.isEnabled = true
     }
     
+    // MARK: - IBActions
     @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
 }
 
 // MARK: - Text field delegate
-
 extension NewPlaceViewController: UITextFieldDelegate {
     //    Hide keyboard by pressing done button
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

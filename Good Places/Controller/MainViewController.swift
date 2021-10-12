@@ -9,7 +9,10 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController {
+    // MARK: - Constants
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: - Variables
     private var goodPlaces: Results<Place>!
     private var filteredPlaces: Results<Place>!
     private var ascendingSorting = true
@@ -21,6 +24,7 @@ class MainViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
+    // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
@@ -56,6 +60,17 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func sorting() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            goodPlaces = goodPlaces.sorted(byKeyPath: "date", ascending: ascendingSorting)
+        } else {
+            goodPlaces = goodPlaces.sorted(byKeyPath: "name", ascending: ascendingSorting)
+        }
+        
+        tableView.reloadData()
+    }
+    
+    // MARK: - IBActions
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         newPlaceVC.savePlace()
@@ -76,16 +91,6 @@ class MainViewController: UIViewController {
         }
         
         sorting()
-    }
-    
-    private func sorting() {
-        if segmentedControl.selectedSegmentIndex == 0 {
-            goodPlaces = goodPlaces.sorted(byKeyPath: "date", ascending: ascendingSorting)
-        } else {
-            goodPlaces = goodPlaces.sorted(byKeyPath: "name", ascending: ascendingSorting)
-        }
-        
-        tableView.reloadData()
     }
 }
 
