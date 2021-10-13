@@ -9,6 +9,10 @@ import UIKit
 import MapKit
 import CoreLocation
 
+protocol MapViewControllerDelegate {
+    func getAddress(_ address: String?)
+}
+
 class MapViewController: UIViewController {
     // MARK: - Constants
     let annotationIdentifier = "annotationIdentifier"
@@ -16,6 +20,7 @@ class MapViewController: UIViewController {
     let regionInMeters = 1_000.0
     
     // MARK: - Variables
+    var mapViewControllerDelegate: MapViewControllerDelegate?
     var place = Place()
     var incomeSegueIdentifier = ""
     
@@ -111,6 +116,8 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func doneButtonPressed(_ sender: Any) {
+        mapViewControllerDelegate?.getAddress(addressLabel.text)
+        dismiss(animated: true, completion: nil)
     }
 }
 
