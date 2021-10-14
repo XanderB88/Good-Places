@@ -8,7 +8,7 @@
 import UIKit
 
 class NewPlaceViewController: UITableViewController {
-    // MARK: - Variables
+    // MARK: - Properties
     var currentPlace: Place!
     var imageIsChanged = false
     
@@ -20,6 +20,7 @@ class NewPlaceViewController: UITableViewController {
     @IBOutlet weak var placeType: UITextField!
     @IBOutlet weak var ratingControl: RatingControlView!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         //        Delete lines from down of table
@@ -33,7 +34,6 @@ class NewPlaceViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let cameraIcon = #imageLiteral(resourceName: "camera")
@@ -89,6 +89,7 @@ class NewPlaceViewController: UITableViewController {
         }
     }
     
+    // MARK: - Public methods
     func savePlace() {
         let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
         let imageData = image?.pngData()
@@ -113,6 +114,7 @@ class NewPlaceViewController: UITableViewController {
         
     }
     
+    // MARK: - Private methods
     private func setupEditingScreen() {
         if currentPlace != nil {
             setupNavigationBar()

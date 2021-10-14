@@ -288,6 +288,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WE-uz-9fw">
+                                <rect key="frame" x="182" y="777" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="NWl-lb-y5o"/>
+                                    <constraint firstAttribute="height" constant="50" id="SDi-ob-kk1"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="directionButtonPressed:" destination="6iJ-pv-FFr" eventType="touchUpInside" id="cCj-6g-fkt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fFg-5N-9xA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -298,6 +309,7 @@
                             <constraint firstItem="oYv-iA-dn1" firstAttribute="top" secondItem="G8u-Pg-H78" secondAttribute="top" id="DCl-bB-fGM"/>
                             <constraint firstItem="6gi-mO-0Bp" firstAttribute="top" secondItem="fFg-5N-9xA" secondAttribute="top" constant="40" id="DPj-Ok-2kF"/>
                             <constraint firstItem="0QB-81-l57" firstAttribute="centerX" secondItem="G8u-Pg-H78" secondAttribute="centerX" id="GPd-k3-cxf"/>
+                            <constraint firstItem="3WE-uz-9fw" firstAttribute="centerX" secondItem="G8u-Pg-H78" secondAttribute="centerX" id="IJu-gL-TSW"/>
                             <constraint firstItem="d4O-cm-Sml" firstAttribute="centerY" secondItem="G8u-Pg-H78" secondAttribute="centerY" constant="-15" id="Sxm-eC-SU2"/>
                             <constraint firstItem="oYv-iA-dn1" firstAttribute="top" secondItem="9up-oM-jjm" secondAttribute="bottom" constant="-168" id="WFq-9M-K9s"/>
                             <constraint firstItem="oYv-iA-dn1" firstAttribute="trailing" secondItem="fFg-5N-9xA" secondAttribute="trailing" id="Yfs-sr-f45"/>
@@ -305,12 +317,14 @@
                             <constraint firstItem="oYv-iA-dn1" firstAttribute="leading" secondItem="fFg-5N-9xA" secondAttribute="leading" id="h7G-4H-5Sz"/>
                             <constraint firstItem="fFg-5N-9xA" firstAttribute="trailing" secondItem="9up-oM-jjm" secondAttribute="trailing" constant="20" id="hHr-xi-Sgy"/>
                             <constraint firstItem="fFg-5N-9xA" firstAttribute="trailing" secondItem="plf-2f-Ebe" secondAttribute="trailing" constant="35" id="hPO-Gt-huT"/>
+                            <constraint firstItem="fFg-5N-9xA" firstAttribute="bottom" secondItem="3WE-uz-9fw" secondAttribute="bottom" constant="35" id="oZ1-xE-VaM"/>
                             <constraint firstItem="fFg-5N-9xA" firstAttribute="bottom" secondItem="plf-2f-Ebe" secondAttribute="bottom" constant="120" id="uN7-es-NfY"/>
                             <constraint firstAttribute="bottom" secondItem="oYv-iA-dn1" secondAttribute="bottom" id="z0H-a6-8Af"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="9up-oM-jjm" id="c0Q-xq-RAp"/>
+                        <outlet property="directionButton" destination="3WE-uz-9fw" id="uK9-dp-egS"/>
                         <outlet property="doneButton" destination="0QB-81-l57" id="QoW-wM-w8a"/>
                         <outlet property="mapView" destination="oYv-iA-dn1" id="SEu-76-xHs"/>
                         <outlet property="userMark" destination="d4O-cm-Sml" id="ymR-4A-YHn"/>
@@ -509,6 +523,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="195" height="196"/>
         <image name="cancel" width="128" height="128"/>
         <image name="map" width="50" height="50"/>

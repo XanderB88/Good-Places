@@ -9,10 +9,9 @@ import UIKit
 import RealmSwift
 
 class MainViewController: UIViewController {
-    // MARK: - Constants
+    // MARK: - Properties
     private let searchController = UISearchController(searchResultsController: nil)
     
-    // MARK: - Variables
     private var goodPlaces: Results<Place>!
     private var filteredPlaces: Results<Place>!
     private var ascendingSorting = true
@@ -29,6 +28,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         //        Add items from data base
@@ -42,7 +42,7 @@ class MainViewController: UIViewController {
         definesPresentationContext = true
     }
     
-    //      MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
@@ -60,6 +60,7 @@ class MainViewController: UIViewController {
         }
     }
     
+    // MARK: - Private methods
     private func sorting() {
         if segmentedControl.selectedSegmentIndex == 0 {
             goodPlaces = goodPlaces.sorted(byKeyPath: "date", ascending: ascendingSorting)

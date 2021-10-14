@@ -104,12 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				1166DAA8270316D7005A623C /* Application */,
+				116B7C19270C44BC00A78D74 /* Manager */,
 				11657EFF2704BA46004DC8F3 /* View */,
 				11657F002704BA5C004DC8F3 /* Controller */,
 				1163D94D2703FCA9002A0AD5 /* Model */,
 				1166DAA9270316F5005A623C /* Supporting files */,
 				1166DAA2270316C4005A623C /* Info.plist */,
-				116B7C19270C44BC00A78D74 /* Manager */,
 			);
 			path = "Good Places";
 			sourceTree = "<group>";
