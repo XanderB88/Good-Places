@@ -25,7 +25,7 @@
       "scale" : "1x"
     },
     {
-      "filename" : "star-2.png",
+      "filename" : "mapPoint-3.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -36,7 +36,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "star-3.png",
+      "filename" : "mapPoint-2.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -47,7 +47,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "star-2-2.png",
+      "filename" : "mapPoint-4.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

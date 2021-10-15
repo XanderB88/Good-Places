@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RTG-dB-47R">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RTG-dB-47R">
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,7 +23,7 @@
                             <tableViewSection id="ShA-zU-GPe">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="250" id="HIg-ke-h5y">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HIg-ke-h5y" id="ZgG-lj-LCx">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
@@ -55,7 +56,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="AWp-3P-9Xy">
-                                        <rect key="frame" x="0.0" y="274.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="294.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AWp-3P-9Xy" id="Csm-Ki-jZi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -90,7 +91,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="DI4-aL-c9J">
-                                        <rect key="frame" x="0.0" y="349.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="369.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DI4-aL-c9J" id="Tle-WJ-5AC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -121,7 +122,7 @@
                                                         <constraint firstAttribute="width" constant="30" id="Fkl-YU-u2s"/>
                                                         <constraint firstAttribute="height" constant="30" id="lg2-Gt-tWr"/>
                                                     </constraints>
-                                                    <state key="normal" image="map-point-pointer"/>
+                                                    <state key="normal" image="mapPoint"/>
                                                     <connections>
                                                         <segue destination="6iJ-pv-FFr" kind="presentation" identifier="userLocation" modalPresentationStyle="fullScreen" id="4xa-UE-IVH"/>
                                                     </connections>
@@ -138,7 +139,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="75" id="61h-qZ-uky">
-                                        <rect key="frame" x="0.0" y="424.5" width="414" height="75"/>
+                                        <rect key="frame" x="0.0" y="444.5" width="414" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="61h-qZ-uky" id="DXh-Wa-iBY">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
@@ -173,7 +174,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="140" id="TiW-Up-PQD">
-                                        <rect key="frame" x="0.0" y="499.5" width="414" height="140"/>
+                                        <rect key="frame" x="0.0" y="519.5" width="414" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TiW-Up-PQD" id="aun-73-Fwy">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
@@ -258,14 +259,15 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal">
-                                    <imageReference key="image" image="map-point-pointer" symbolScale="large" renderingMode="original"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageReference key="image" image="userLocation" symbolScale="large" renderingMode="original"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40" scale="large"/>
                                 </state>
                                 <connections>
                                     <action selector="centerUserLocation:" destination="6iJ-pv-FFr" eventType="touchUpInside" id="cru-Es-oox"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="d4O-cm-Sml">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userPoint" translatesAutoresizingMaskIntoConstraints="NO" id="d4O-cm-Sml">
                                 <rect key="frame" x="187" y="413" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kYk-Rg-5av"/>
@@ -294,7 +296,7 @@
                                     <constraint firstAttribute="width" constant="50" id="NWl-lb-y5o"/>
                                     <constraint firstAttribute="height" constant="50" id="SDi-ob-kk1"/>
                                 </constraints>
-                                <state key="normal" image="GetDirection"/>
+                                <state key="normal" image="route"/>
                                 <connections>
                                     <action selector="directionButtonPressed:" destination="6iJ-pv-FFr" eventType="touchUpInside" id="cCj-6g-fkt"/>
                                 </connections>
@@ -357,7 +359,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="L0k-AJ-Se2" customClass="CustomTableViewCell" customModule="Good_Places" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="85"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L0k-AJ-Se2" id="65D-J7-9z8">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
@@ -371,22 +373,22 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="9W8-FS-mgN">
-                                                    <rect key="frame" x="95" y="9" width="189" height="67"/>
+                                                    <rect key="frame" x="95" y="9" width="44.5" height="67"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwu-da-dq9">
-                                                            <rect key="frame" x="0.0" y="0.0" width="189" height="24.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="44.5" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apM-fE-gga">
-                                                            <rect key="frame" x="0.0" y="26.5" width="189" height="21"/>
+                                                            <rect key="frame" x="0.0" y="26.5" width="44.5" height="21"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDM-AN-Qx1">
-                                                            <rect key="frame" x="0.0" y="49.5" width="189" height="17.5"/>
+                                                            <rect key="frame" x="0.0" y="49.5" width="44.5" height="17.5"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -394,7 +396,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="252" placeholderIntrinsicHeight="44" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dwG-zY-14O" customClass="RatingControlView" customModule="Good_Places" customModuleProvider="target">
-                                                    <rect key="frame" x="292" y="35.5" width="102" height="14"/>
+                                                    <rect key="frame" x="147.5" y="20.5" width="246.5" height="44"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="starCount">
                                                             <integer key="value" value="5"/>
@@ -523,12 +525,13 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AZ" width="25" height="24"/>
-        <image name="GetDirection" width="50" height="50"/>
         <image name="Photo" width="195" height="196"/>
-        <image name="cancel" width="128" height="128"/>
+        <image name="cancel" width="256" height="256"/>
         <image name="map" width="50" height="50"/>
-        <image name="map-point-pointer" width="512" height="512"/>
-        <image name="user" width="256" height="256"/>
+        <image name="mapPoint" width="256" height="256"/>
+        <image name="route" width="256" height="256"/>
+        <image name="userLocation" width="256" height="256"/>
+        <image name="userPoint" width="256" height="256"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
