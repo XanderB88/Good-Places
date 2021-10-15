@@ -41,8 +41,8 @@ class MapViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        addressLabel.text = ""
         mapView.delegate = self
+        addressLabel.text = ""
         setupMapView()
         checkLocationServices()
     }
@@ -169,15 +169,13 @@ class MapViewController: UIViewController {
     
     private func createDirectionsRequest(from coordinate: CLLocationCoordinate2D) -> MKDirections.Request? {
         guard let destinationCoordinate = placeCoordinate else { return nil }
+       
         let startLocation = MKPlacemark(coordinate: coordinate)
         let destination = MKPlacemark(coordinate: destinationCoordinate)
         
-        print(destination)
-        print(startLocation)
-        
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: startLocation)
-        request.source = MKMapItem(placemark: destination)
+        request.destination = MKMapItem(placemark: destination)
         request.transportType = .automobile
         request.requestsAlternateRoutes = true
         
@@ -251,7 +249,7 @@ extension MapViewController: MKMapViewDelegate {
         let currentLocation = getCurrentLocation(for: mapView)
         let geocoder = CLGeocoder()
         
-        if incomeSegueIdentifier == "ShowPlace" && previousLocation != nil {
+        if incomeSegueIdentifier == "showPlace" && previousLocation != nil {
             DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
                 self.showUserLocation()
             }
@@ -287,6 +285,7 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay as! MKPolyline)
         renderer.strokeColor = .blue
+        renderer.lineWidth = 5.0
         
         return renderer
     }
