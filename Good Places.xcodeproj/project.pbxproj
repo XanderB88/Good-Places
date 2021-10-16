@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1162689F271A4B6D0008D262 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1162689E271A4B6C0008D262 /* MapManager.swift */; };
 		1163D94A2703F611002A0AD5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */; };
 		1163D94C2703FCA2002A0AD5 /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1163D94B2703FCA2002A0AD5 /* PlacesModel.swift */; };
 		11657F022704C781004DC8F3 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11657F012704C781004DC8F3 /* NewPlaceViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1162689E271A4B6C0008D262 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 		1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		1163D94B2703FCA2002A0AD5 /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
 		11657F012704C781004DC8F3 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
@@ -54,32 +56,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1163D94D2703FCA9002A0AD5 /* Model */ = {
+		1163D94D2703FCA9002A0AD5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1163D94B2703FCA2002A0AD5 /* PlacesModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		11657EFF2704BA46004DC8F3 /* View */ = {
+		11657EFF2704BA46004DC8F3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				1166DA9A270316C3005A623C /* Main.storyboard */,
 				1165A507270FB78E00DC5A74 /* RatingControlView.swift */,
-				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
 			);
-			path = View;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		11657F002704BA5C004DC8F3 /* Controller */ = {
+		11657F002704BA5C004DC8F3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1163D9492703F611002A0AD5 /* CustomTableViewCell.swift */,
 				1166DAAA27031752005A623C /* MainViewController.swift */,
 				11657F012704C781004DC8F3 /* NewPlaceViewController.swift */,
 				116E291B271124DE0055777C /* MapViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1166DA88270316C3005A623C = {
@@ -104,12 +106,11 @@
 			isa = PBXGroup;
 			children = (
 				1166DAA8270316D7005A623C /* Application */,
-				116B7C19270C44BC00A78D74 /* Manager */,
-				11657EFF2704BA46004DC8F3 /* View */,
-				11657F002704BA5C004DC8F3 /* Controller */,
-				1163D94D2703FCA9002A0AD5 /* Model */,
+				116B7C19270C44BC00A78D74 /* Managers */,
+				1163D94D2703FCA9002A0AD5 /* Models */,
+				11657EFF2704BA46004DC8F3 /* Views */,
+				11657F002704BA5C004DC8F3 /* Controllers */,
 				1166DAA9270316F5005A623C /* Supporting files */,
-				1166DAA2270316C4005A623C /* Info.plist */,
 			);
 			path = "Good Places";
 			sourceTree = "<group>";
@@ -126,18 +127,20 @@
 		1166DAA9270316F5005A623C /* Supporting files */ = {
 			isa = PBXGroup;
 			children = (
+				1166DAA2270316C4005A623C /* Info.plist */,
 				1166DA9D270316C4005A623C /* Assets.xcassets */,
 				1166DA9F270316C4005A623C /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
 		};
-		116B7C19270C44BC00A78D74 /* Manager */ = {
+		116B7C19270C44BC00A78D74 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
 				116B7C17270C3F8A00A78D74 /* StorageManager.swift */,
+				1162689E271A4B6C0008D262 /* MapManager.swift */,
 			);
-			path = Manager;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		457B919D338F13DE60C7C5D7 /* Pods */ = {
@@ -277,6 +280,7 @@
 				116B7C18270C3F8A00A78D74 /* StorageManager.swift in Sources */,
 				116E291C271124DE0055777C /* MapViewController.swift in Sources */,
 				1165A508270FB78E00DC5A74 /* RatingControlView.swift in Sources */,
+				1162689F271A4B6D0008D262 /* MapManager.swift in Sources */,
 				1163D94A2703F611002A0AD5 /* CustomTableViewCell.swift in Sources */,
 				1166DA97270316C3005A623C /* SceneDelegate.swift in Sources */,
 				1163D94C2703FCA2002A0AD5 /* PlacesModel.swift in Sources */,
@@ -429,7 +433,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JF86XZDGA;
-				INFOPLIST_FILE = "Good Places/Info.plist";
+				INFOPLIST_FILE = "Good Places/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -449,7 +453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3JF86XZDGA;
-				INFOPLIST_FILE = "Good Places/Info.plist";
+				INFOPLIST_FILE = "Good Places/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
